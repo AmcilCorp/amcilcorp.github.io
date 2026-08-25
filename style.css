@@ -1,0 +1,175 @@
+#computer{
+    /* Behind Image Screen */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+#overlay{
+    /* Background Image */
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    
+    z-index: 10;
+}
+
+#screen{
+    /* Computer Screen */
+    position: absolute;
+    top: 14%;
+    left: 34%; /* Off-centers screen to adjust for text */
+
+    width: 33%;
+    height: 48.5%;
+
+    overflow: hidden;
+    background: black;
+}
+
+#introVid{
+    /* BootUp Video - NOT INCLUDED IN div SCREEN */
+    position: fixed;
+    width: 35%;
+    height: 50%;
+    top: 15%;
+    left: 32%;
+    z-index: 2;
+}
+
+/* #foundFootage1{
+    display: none;
+    top: 50%;
+    /* z-index: 2; */
+
+
+#sequenceDisplay{
+    /* BootUp Sequence */
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#loginPage{
+    /* User Login Page */
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#homePage{
+    /* Desktop */
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#serverPage{
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#databasePage{
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#textWarning{
+    font-size: smaller;
+    color: red;
+    position: absolute;
+    left: 6%;
+}
+
+#errorPopup{
+    display: none;
+
+    position: absolute;
+    width: 500px;
+    top: 35%;
+    left: 4%;
+    
+    z-index: 3;
+    pointer-events: none;
+}
+
+#errorButton{
+    position: absolute;
+    padding: 55px 45px;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background: red;
+    color: whitesmoke;
+
+    animation: crtGlow 2s infinite;
+    box-shadow: 
+        0 0 2px darkgreen,
+        0 0 4px darkcyan; 
+}
+
+#returnHomeOVL{
+    /* Return Home Button */
+    display: none;
+
+    position: absolute;
+    width: 500px;
+    top: 88%;
+    left: 29%;
+    z-index: 2;
+}
+
+#returnHomeButton{
+    position: absolute;
+    padding: 4px 32px;
+
+    background: darkcyan;
+    border: 2px solid white;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    cursor: pointer;
+}

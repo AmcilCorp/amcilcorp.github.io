@@ -1,0 +1,129 @@
+introVid = document.getElementById("introVid");
+seqDis = document.getElementById("sequenceDisplay");
+text = document.getElementById("bootUpText");
+
+home = document.getElementById("homePage");
+server = document.getElementById("serverPage");
+database = document.getElementById("databasePage");
+
+errorPopup = document.getElementById("errorPopup");
+errorButton = document.getElementById("errorButton");
+
+ffVid01 = document.getElementById("ff01");
+
+returnHomeOVL = document.getElementById("returnHomeOVL");
+returnHomeButton = document.getElementById("returnHomeButton");
+
+
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function typeText(word){
+    text.innerHTML += "<br>";
+    for (let i = 0; i < word.length; i++){
+        text.innerHTML += word[i];
+        await wait(50);
+    }
+}
+
+// Display's current screen 
+function showScreen(screen){
+    introVid.style.display = "none";
+    loginPage.style.display = "none";
+    seqDis.style.display = "none";
+    home.style.display = "none";
+    server.style.display = "none";
+    database.style.display = "none";
+    ffVid01.style.display = "none";
+
+    screen.style.display = "block";
+
+    if (screen === server || screen === database){
+        showReturnButton();
+    } else {
+        hideReturnButton();
+    }
+}
+
+//Reveals 'Return Home' Button
+function showReturnButton(){
+    returnHomeOVL.style.display = "block";
+}
+
+function hideReturnButton(){
+    returnHomeOVL.style.display = "none";
+}
+
+// Intro Terminal Bootup Sequence
+async function runBootSequence() {
+    await typeText("> INITIALIZING...");
+    await wait(1750); //2500
+
+    await typeText("> CONNECTING TO SERVERS...");
+    await wait(2000); //3000
+
+    await typeText("> NETWORK SECURED...");
+    await wait(2000); //4000
+
+    await typeText("> WELCOME TO AMCIL CORPORATION!");
+    await wait(1750); //20000
+
+    showScreen(loginPage);
+}
+
+// Display Error Message after Invalid Input
+async function runErrorMessage(message) {
+    errorButton.textContent = message;
+    errorPopup.style.display = "block";
+    await wait(2000);
+    errorPopup.style.display = "none";
+    
+}
+
+introVid.addEventListener("ended", function(){
+    showScreen(seqDis);
+    runBootSequence();
+});
+
+let employee;
+
+document.getElementById("userInput").onclick = function(){ 
+    employee = document.getElementById("myID").value;
+    if (employee == 852206){
+        showScreen(home);
+    } else {
+        myID.value = "";
+        runErrorMessage("Invalid Employee ID. Try Again");
+    }
+}
+
+let accessCode;
+
+document.getElementById("securityButton").onclick = function(){
+    accessCode = document.getElementById("securityCode").value;
+    if (accessCode == 1){
+        securityCode.value = "";
+        showScreen(database);
+    } else {
+        securityCode.value = "";
+        runErrorMessage("Valid Access Code Required.");
+    }
+}
+
+document.getElementById("hiddenButton").onclick = function(){
+    showScreen(server);
+}
+
+document.getElementById("hiddenButton3").onclick = function(){
+    showScreen(ffVid01);
+    ffVid01.play();
+    ffVid01.addEventListener("ended", function(){
+        showScreen(database);
+    })
+}
+
+returnHomeButton.onclick = function(){
+    showScreen(home);
+}

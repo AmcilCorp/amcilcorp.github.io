@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amcil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="classes.css">
+</head>
+<body>
+    <div id="computer">
+
+        <img src="Website_OVLPage7.png" id="overlay">
+
+        <video id="introVid" autoplay muted controls>
+                <source src="AMCILBootUp.mov">
+            </video>
+
+        <div id="screen"> 
+
+            <div class="CRToverlay"></div>
+            
+            <div id="errorPopup">
+                <button id="errorButton"></button>
+            </div>
+
+            <div id="returnHomeOVL">
+                <button id="returnHomeButton">RETURN HOME</button>
+            </div>
+
+            <section id="sequenceDisplay">
+                <p id="bootUpText"></p>
+            </section>
+            
+            <section id="loginPage">
+                <p><br>------- Enter Employee Identification --------</p>
+                <hr>
+                <!-- <span id="userInput"></span> <span id="cursor"></span> -->
+
+                <input id="myID" class="employeeInput"><br><br>
+                <button id="userInput" class="loginButton">Login</button>
+
+                <div class="errorPopup"></div>
+            </section>
+
+            <section id="homePage">
+                <img id="amLogo" src="AmcilLogo2.png" class="corner_img">
+                <p><br>AMCIL CORP. SYSTEMS<br>
+                    COPYRIGHT (C) 1977 AMCIL CORP.<br>
+                    Welcome, Richard Weathers.
+                </p>
+                <hr>
+                <div class="space"></div>
+                <hr>
+                <img id="iconDesktop" src="PixelDesktopIcons.png" class="iconDesktop_img">
+                <img id="iconRow" src="PixelComputerIcons.png" class="iconRow_img">
+                <button id="hiddenButton" class="hiddenButton"></button>
+            </section>
+
+            <section id="serverPage">
+                <p><br>------- SECURITY ACCESS CODE REQUIRED --------</p>
+                <hr>
+                <p style ="color: darkcyan" id="textWarning">These files require a security code to access. 
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;Please enter clearence security code.</p>
+
+                <input id="securityCode" class="secCodeInput"><br>
+                <button id="securityButton" class="secButton">Access</button>
+                <div class="errorPopup"></div>
+                <div class="space"></div>
+                <hr>
+                <div class="returnHomeOVL"></div>
+            </section>
+
+            <section id="databasePage">
+                <p>&nbsp;ACServer7/Facilities/Class-01/Atticus</p>
+                <hr><br><br><br>
+                <img class="databasePage_img" src="databasePage.png">
+                <button id="hiddenButton2" class="hiddenButton2"></button>
+                <button id="hiddenButton3" class="hiddenButton3"></button>
+                <div class="returnHomeOVL"></div>
+                <div class="space"></div>
+                <hr>
+            </section>
+
+            <section id="foundFootage1">
+                <video id="ff01" class="ff01">
+                    <source src="Found_Footage_01.mov">
+                </video>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body> 
+</html>

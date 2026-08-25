@@ -1,0 +1,164 @@
+.CRToverlay{
+    position: fixed;
+    inset: -200%;
+    background-image: url("noise.png");
+    z-index: 9;
+    pointer-events: none;
+
+    opacity: 14%;
+    animation: shift 0.2s linear infinite both;
+}
+
+@keyframes shift{
+    0%{
+        transform: translateX(10%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-10%) translateY(-10%);
+    }
+}
+
+@keyframes crtGlow{
+    0%, 100%{
+        text-shadow: 
+            0 0 2px #00ff66,
+            0 0 0px black,
+            0 0 2px #00ff66,
+            0 0 0px black;
+        ;
+    }
+}
+
+.corner_img {
+    /* AMCIL Desktop Logo */
+    position: absolute;
+    top: 6%;
+    left: 66%;
+    width: 27%;
+    height: 23%;
+}
+
+.iconRow_img {
+    position: absolute;
+    top: 73%;
+    left: 55%;
+    width: 40%;
+    height: 38%;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.iconDesktop_img{
+    position: absolute;
+    margin-left: -58px;
+    top: 32%;
+    width: 34%;
+    height: 52%;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.databasePage_img{
+    position: absolute;
+    top: 12%;
+    margin-left: -10px;
+    width: 110%;
+    height: 78%;
+}
+
+.space{
+    /* Lower Desktop Line */
+    margin-top: 190px;
+}
+
+.hiddenButton{
+    position: absolute;
+    top: 89%;
+    left: 80%;
+    padding: 8px 8px;
+    background: transparent;
+    border: 2px solid transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.hiddenButton2{
+    position: absolute;
+    top: 55%;
+    left: 2.5%;
+    padding: 12px 12px;
+    background: transparent;
+    border: 2px solid transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.hiddenButton3{
+    position: absolute;
+    top: 35%;
+    left: 2.5%;
+    padding: 12px 12px;
+    background: transparent;
+    border: 2px transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.ff01{
+    display: none;
+    position: fixed;
+    width: 35%;
+    height: 50%;
+    top: 15%;
+    left: 32%;
+}
+
+.employeeInput{
+    padding: 8px 8px;
+    color: darkcyan;
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+    border: 2px solid darkcyan;
+    animation: crtGlow 2s infinite;
+
+    box-shadow: 
+        0 0 2px darkgreen,
+        0 0 4px darkcyan; 
+
+    opacity: 90%;
+}
+
+.loginButton{
+    background: transparent;
+    border: 2px solid darkcyan;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    cursor: pointer;
+    opacity: 80%;
+    animation: crtGlow 2s infinite;
+}
+
+.secCodeInput{
+    /* Security Code Input */
+    position: absolute;
+    top: 38%;
+    left: 25%;
+    padding: 8px 8px;
+
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    background: white;
+    border: 2px solid red;
+}
+
+.secButton{
+    /* Security Code Button */
+    position: absolute;
+    top: 50%;
+    left: 36.5%;
+
+    background: red;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    cursor: pointer;
+}
