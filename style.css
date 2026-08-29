@@ -32,6 +32,32 @@
     background: black;
 }
 
+#enterTerminal{
+    display: none;
+    position: absolute;
+    width: 500px;
+    top: 33.5%;
+    left: 41.5%;
+    
+    z-index: 1;
+}
+
+#enterTerminalButton{
+    position: absolute;
+    padding: 22px 32px;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background: darkcyan;
+    color: whitesmoke;
+
+    animation: crtGlow 2s infinite;
+    box-shadow: 
+        0 0 2px purple,
+        0 0 4px darkcyan; 
+    cursor: pointer;
+}
+
 #introVid{
     /* BootUp Video - NOT INCLUDED IN div SCREEN */
     position: fixed;

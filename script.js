@@ -1,3 +1,6 @@
+enterTerminal = document.getElementById("enterTerminal");
+enterTerminalButton = document.getElementById("enterTerminalButton");
+
 introVid = document.getElementById("introVid");
 seqDis = document.getElementById("sequenceDisplay");
 text = document.getElementById("bootUpText");
@@ -20,6 +23,7 @@ function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Boot-Up Text Typing "Animation"
 async function typeText(word){
     text.innerHTML += "<br>";
     for (let i = 0; i < word.length; i++){
@@ -30,6 +34,7 @@ async function typeText(word){
 
 // Display's current screen 
 function showScreen(screen){
+    enterTerminal.style.display = "none";
     introVid.style.display = "none";
     loginPage.style.display = "none";
     seqDis.style.display = "none";
@@ -82,10 +87,16 @@ async function runErrorMessage(message) {
     
 }
 
-introVid.addEventListener("ended", function(){
-    showScreen(seqDis);
-    runBootSequence();
-});
+showScreen(enterTerminal);
+
+enterTerminalButton.onclick = function(){
+    showScreen(introVid);
+    introVid.play();
+    introVid.addEventListener("ended", function(){
+        showScreen(seqDis);
+        runBootSequence();
+    })
+}
 
 let employee;
 
