@@ -84,7 +84,6 @@ async function runErrorMessage(message) {
     errorPopup.style.display = "block";
     await wait(2000);
     errorPopup.style.display = "none";
-    
 }
 
 showScreen(enterTerminal);
@@ -114,7 +113,7 @@ let accessCode;
 
 document.getElementById("securityButton").onclick = function(){
     accessCode = document.getElementById("securityCode").value;
-    if (accessCode == 1){
+    if (accessCode == 1){ // UPDATE MEEEEEEEE
         securityCode.value = "";
         showScreen(database);
     } else {
