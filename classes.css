@@ -81,7 +81,8 @@
     cursor: pointer;
 }
 
-.hiddenButton2{
+.hiddenButton2{ 
+    /* Dawson's Video Button*/
     position: absolute;
     top: 55%;
     left: 2.5%;
@@ -93,8 +94,21 @@
 }
 
 .hiddenButton3{
+    /* Lab Video Button */
     position: absolute;
     top: 35%;
+    left: 2.5%;
+    padding: 12px 12px;
+    background: transparent;
+    border: 2px transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.hiddenButton4{
+    /* Journal Entry Button */
+    position: absolute;
+    top: 43%;
     left: 2.5%;
     padding: 12px 12px;
     background: transparent;
@@ -110,6 +124,15 @@
     height: 50%;
     top: 15%;
     left: 32%;
+}
+
+.ff02{
+    display: none;
+    position: fixed;
+    width: 44%;
+    height: 58%;
+    top: 12%;
+    left: 28%;
 }
 
 .employeeInput{

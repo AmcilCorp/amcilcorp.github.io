@@ -6,6 +6,7 @@ seqDis = document.getElementById("sequenceDisplay");
 text = document.getElementById("bootUpText");
 
 home = document.getElementById("homePage");
+journalEntries = document.getElementById("journalEntries");
 server = document.getElementById("serverPage");
 database = document.getElementById("databasePage");
 
@@ -13,6 +14,7 @@ errorPopup = document.getElementById("errorPopup");
 errorButton = document.getElementById("errorButton");
 
 ffVid01 = document.getElementById("ff01");
+ffVid02 = document.getElementById("ff02");
 
 returnHomeOVL = document.getElementById("returnHomeOVL");
 returnHomeButton = document.getElementById("returnHomeButton");
@@ -42,10 +44,12 @@ function showScreen(screen){
     server.style.display = "none";
     database.style.display = "none";
     ffVid01.style.display = "none";
+    ffVid02.style.display = "none";
+    journalEntries.style.display = "none";
 
     screen.style.display = "block";
 
-    if (screen === server || screen === database){
+    if (screen === server || screen === database || screen === journalEntries){
         showReturnButton();
     } else {
         hideReturnButton();
@@ -113,7 +117,7 @@ let accessCode;
 
 document.getElementById("securityButton").onclick = function(){
     accessCode = document.getElementById("securityCode").value;
-    if (accessCode == 1){ // UPDATE MEEEEEEEE
+    if (accessCode == 8151986){
         securityCode.value = "";
         showScreen(database);
     } else {
@@ -123,15 +127,31 @@ document.getElementById("securityButton").onclick = function(){
 }
 
 document.getElementById("hiddenButton").onclick = function(){
+    // Opens Security Access Page "Server"
     showScreen(server);
 }
 
+document.getElementById("hiddenButton2").onclick = function(){
+    // Dawson's Video
+    showScreen(ffVid02);
+    ffVid02.play();
+    ffVid02.addEventListener("ended", function(){
+        showScreen(database);
+    })
+}
+
 document.getElementById("hiddenButton3").onclick = function(){
+    // Lab Video
     showScreen(ffVid01);
     ffVid01.play();
     ffVid01.addEventListener("ended", function(){
         showScreen(database);
     })
+}
+
+document.getElementById("hiddenButton4").onclick = function(){
+    // Journal Entries
+    showScreen(journalEntries);
 }
 
 returnHomeButton.onclick = function(){
