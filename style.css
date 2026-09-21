@@ -68,12 +68,6 @@
     z-index: 2;
 }
 
-/* #foundFootage1{
-    display: none;
-    top: 50%;
-    /* z-index: 2; */
-
-
 #sequenceDisplay{
     /* BootUp Sequence */
     display: none;
@@ -109,6 +103,18 @@
     display: none;
     position: absolute;
     inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkcyan;
+    animation: crtGlow 2s infinite;
+}
+
+#journalEntries{
+    display: none;
+    position: absolute;
 
     width: 100%;
     height: 100%;
